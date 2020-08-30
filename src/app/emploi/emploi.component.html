@@ -1,0 +1,108 @@
+
+ 
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+   <div style="width: 1000px;  margin: auto;" *ngIf="this.authService.isAuthenticated()">
+    <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row" fxLayoutAlign="space-around center"
+    class="content">
+    <div class="blocks">
+    <button button="submit" mat-raised-button  style="margin-left: 393px; background-color: darksalmon; color: white;" (click)="openDialog()">
+    <mat-icon>add</mat-icon> Ajouter un emploi
+    </button>
+    </div>
+    </div>
+   <p style="font-size: x-large; color: brown; color: rgb(9, 9, 75);"> <strong> Filière: {{this.emlpoiService.module}}</strong></p>
+   </div>
+
+
+      <table style="width: 1000px; margin: auto; font-size: large;" class="table" *ngIf="this.authService.isAuthenticated()">
+       
+          <tr style="     color:white ;   height: 51px;      background-color: rgb(9, 9, 75);;">
+            <th scope="col" style="    color:white ; height: 51px;"></th>
+            <th scope="col">08:30:00 - 10:30:00</th>
+            <th scope="col">10:45:00 - 12:30:00</th>
+            <th scope="col">14:00:00 - 16:00:00</th>
+            <th scope="col">16:15:00 - 18:00:00 </th>
+            <th scope="col">Editer</th>
+          </tr>
+        
+        <tbody >
+          <tr >
+            <th scope="row" style="    color: rgb(9, 9, 75);; height: 51px;">Lundi</th>
+            <td>{{dataSource[0][0].libelle}}</td>
+           
+            <td>{{dataSource[1][0].libelle}}</td>
+            <td>{{dataSource[2][0].libelle}}</td>
+             <td>{{dataSource[3][0].libelle}}</td>
+             <th scope="col">
+              <a (click)="validerPost(element.id)" type="button">
+                <mat-icon class="icon" style="color :rgb(9, 9, 75);">update</mat-icon>
+              </a>
+            </th>
+           
+           
+          </tr>
+          <tr>
+            <th scope="row" style="    color: rgb(9, 9, 75);; height: 51px;">Mardi</th>
+            <td>{{dataSourc2[0][0].libelle}}</td>
+            <td>{{dataSourc2[1][0].libelle}}</td>
+            <td>{{dataSourc2[2][0].libelle}}</td>
+            <td>{{dataSourc2[3][0].libelle}}</td>
+            <th scope="col">
+              <a (click)="validerPost(element.id)" type="button">
+                <mat-icon class="icon" style="color :rgb(9, 9, 75);">update</mat-icon>
+              </a>
+            </th>
+        
+          </tr>
+          <tr>
+            <th scope="row" style="    color: rgb(9, 9, 75);; height: 51px;">Mercredi</th>
+            <td>{{dataSourc3[0][0].libelle}}</td>
+            <td>{{dataSourc3[1][0].libelle}}</td>
+            <td>{{dataSourc3[2][0].libelle}}</td>
+            <td>{{dataSourc3[3][0].libelle}}</td>
+            <th scope="col">
+              <a (click)="validerPost(element.id)" type="button">
+                <mat-icon class="icon" style="color :rgb(9, 9, 75);">update</mat-icon>
+              </a>
+            </th>
+        
+          </tr>
+          <tr>
+            <th scope="row" style="    color: rgb(9, 9, 75);; height: 51px;"> Jeudi</th>
+            <td>{{dataSourc4[0][0].libelle}}</td>
+            <td>{{dataSourc4[1][0].libelle}}</td>
+            <td>{{dataSourc4[2][0].libelle}}</td>
+            <td>{{dataSourc4[3][0].libelle}}</td>
+            <th scope="col">
+              <a (click)="validerPost(element.id)" type="button">
+                <mat-icon class="icon" style="color :rgb(9, 9, 75);">update</mat-icon>
+              </a>
+            </th>
+        
+          </tr>
+          <tr>
+            <th scope="row" style="    color: rgb(9, 9, 75);; height: 51px;"> Vendredi</th>
+            <td>{{dataSourc5[0][0].libelle}}</td>
+            <td>{{dataSourc5[1][0].libelle}}</td>
+            <td>{{dataSourc5[2][0].libelle}}</td>
+            <td>{{dataSourc5[3][0].libelle}}</td>
+            <th scope="col">
+              <a (click)="validerPost(element.id)" type="button">
+                <mat-icon class="icon" style="color :rgb(9, 9, 75);">update</mat-icon>
+              </a>
+            </th>
+        
+          </tr>
+        </tbody>
+      </table>
+     
+     
+      
+   

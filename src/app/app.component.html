@@ -1,0 +1,232 @@
+
+<mat-toolbar color="primary" class="mat-toolbar app-toolbar no-print mat-primary mat-toolbar-multiple-rows" *ngIf="this.authService.isAuthenticated()"  >
+ 
+      <mat-toolbar-row class="mat-toolbar-row"  >
+      <div *ngIf="this.authService.isAdmin()">
+        <button mat-button="" title="Docs menu" style="top: 1;" class="mat-focus-indicator hamburger mat-button mat-button-base"(click)="opened = !opened" >
+          <span class="mat-button-wrapper">
+            <mat-icon role="img" svgicon="menu" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true">
+              <svg focusable="false" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></mat-icon>
+              </span>
+              <div matripple="" class="mat-ripple mat-button-ripple">
+            
+              </div>
+              
+            </button>
+           
+            <a class="navbar-brand">
+              <img id="aeva" src="assets/images/enset.jpg">
+            </a>  
+           
+      </div>
+       <li class="nav-item" *ngIf="this.authService.isAuthenticated()" > 
+         <a class="navbar-link" style="top: 7px; color: darksalmon;    font-family: unset; 
+         top: 60px;">Bienvenue {{this.authService.getUsername()}}</a>
+      </li>
+   
+          <li class="nav-item">
+            <a  routerLink="login"class="nav-link" href="#" (click)="logout()" style="font-size: small; " >
+                <mat-icon class="icon">input</mat-icon>
+              <span class="label"><strong>Déconnection</strong></span> 
+            </a>
+          </li>
+        
+          
+             <!--    <li class="ng-star-inserted selected">
+                <a class="nav-link" href="docs" title="Docs.">
+                  <span class="nav-link-inner">Docs</span>
+                </a>
+              </li>
+              <li class="ng-star-inserted">
+                <a class="nav-link" href="resources" title="Resources.">
+                  <span class="nav-link-inner">Resources</span>
+                </a></li>
+                
+               <li class="ng-star-inserted">
+                  <a class="nav-link" href="events" title="Events.">
+                    <span class="nav-link-inner">Events</span>
+                  </a>
+                </li> 
+               <li class="ng-star-inserted">
+                <a class="nav-link" href="https://blog.angular.io/" title="Blog.">
+                  <span class="nav-link-inner">Blog</span>
+                </a>
+              </li> 
+              
+            </ul> -->
+            <!---->
+            <!-- <input type="search" aria-label="search" placeholder="Search"> -->
+  <!-- <div class="toolbar-external-icons-container">
+    <a href="https://twitter.com/angular" title="Twitter" aria-label="Angular on twitter" >
+      <mat-icon role="img"   svgicon="logos:twitter" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true">
+        <svg focusable="false" viewBox="0 0 50 59" xmlns="http://www.w3.org/2000/svg">
+          <path d="M50,9.3c-1.8,0.8-3.8,1.4-5.9,1.6c2.1-1.3,3.7-3.3,4.5-5.7c-2,1.2-4.2,2-6.5,2.5c-1.9-2-4.5-3.2-7.5-3.2c-5.7,0-10.3,4.6-10.3,10.3c0,0.8,0.1,1.6,0.3,2.3C16.1,16.7,8.5,12.6,3.5,6.4c-0.9,1.5-1.4,3.3-1.4,5.2c0,3.6,1.8,6.7,4.6,8.5C5,20,3.4,19.6,2,18.8c0,0,0,0.1,0,0.1c0,5,3.5,9.1,8.2,10.1c-0.9,0.2-1.8,0.4-2.7,0.4c-0.7,0-1.3-0.1-1.9-0.2c1.3,4.1,5.1,7,9.6,7.1c-3.5,2.8-7.9,4.4-12.7,4.4c-0.8,0-1.6,0-2.4-0.1c4.5,2.9,9.9,4.6,15.7,4.6c18.9,0,29.2-15.6,29.2-29.2c0-0.4,0-0.9,0-1.3C46.9,13.2,48.6,11.4,50,9.3z"></path>
+        </svg>
+      </mat-icon>
+      </a>
+          <a href="https://github.com/angular/angular" title="GitHub" aria-label="Angular on github">
+            <mat-icon role="img" svgicon="logos:github" class="mat-icon notranslate mat-icon-no-color" aria-hidden="true">
+              <svg focusable="false" viewBox="0 0 51.8 50.4" xmlns="http://www.w3.org/2000/svg">
+                <path d="M25.9,0.2C11.8,0.2,0.3,11.7,0.3,25.8c0,11.3,7.3,20.9,17.5,24.3c1.3,0.2,1.7-0.6,1.7-1.2c0-0.6,0-2.6,0-4.8c-7.1,1.5-8.6-3-8.6-3c-1.2-3-2.8-3.7-2.8-3.7c-2.3-1.6,0.2-1.6,0.2-1.6c2.6,0.2,3.9,2.6,3.9,2.6c2.3,3.9,6,2.8,7.5,2.1c0.2-1.7,0.9-2.8,1.6-3.4c-5.7-0.6-11.7-2.8-11.7-12.7c0-2.8,1-5.1,2.6-6.9c-0.3-0.7-1.1-3.3,0.3-6.8c0,0,2.1-0.7,7,2.6c2-0.6,4.2-0.9,6.4-0.9c2.2,0,4.4,0.3,6.4,0.9c4.9-3.3,7-2.6,7-2.6c1.4,3.5,0.5,6.1,0.3,6.8c1.6,1.8,2.6,4.1,2.6,6.9c0,9.8-6,12-11.7,12.6c0.9,0.8,1.7,2.4,1.7,4.7c0,3.4,0,6.2,0,7c0,0.7,0.5,1.5,1.8,1.2c10.2-3.4,17.5-13,17.5-24.3C51.5,11.7,40.1,0.2,25.9,0.2z">
+                 </path>
+                </svg>
+              </mat-icon>
+            </a>
+          </div> -->
+        </mat-toolbar-row>
+      </mat-toolbar>
+<!-- hhh
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button mat-icon-button (click)="opened = !opened">
+      <mat-icon>menu</mat-icon>
+      </button>
+  <div class="header-main">
+      <a class="navbar-brand">
+      
+        
+      </a>
+    </div>
+    <a href="" style="font-family: -apple-system;font-weight: 500;font-size: 1rem"> <strong> Bienvenue </strong></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item"  >
+         
+        <a class="nav-link" href="#"routerLink="congesPersonnel">
+            <mat-icon class="icon">record_voice_over</mat-icon>
+            <span class="label"><strong>Demandes de congés</strong></span> 
+        </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <mat-icon>perm_identity</mat-icon>
+            <span class="label"><strong>Admin</strong> </span> 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" routerLink="profile"><strong>Mon profil</strong> </a>
+          <a class="dropdown-item" href="#"routerLink="edit"><strong>Editer profil</strong> </a>
+          <div class="dropdown-divider"></div>
+         
+        </div>
+      </li>
+      <li class="nav-item">
+        <a  routerLink="login"class="nav-link" href="#" (click)="logout()">
+            <mat-icon class="icon">input</mat-icon>
+          <span class="label"><strong>Déconnection</strong></span> 
+        </a>
+      </li>
+    </ul>
+   
+  </div>
+</nav> -->
+<!-- <nav>
+  <div class="nav-wrapper">
+    <button mat-icon-button (click)="opened = !opened">
+      <mat-icon>menu</mat-icon>
+      </button>
+      <a class="navbar-brand">
+        <img id="aeva" src="assets/images/enset.jpg">
+      </a>  
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li class="nav-item">
+        <a  routerLink="login"class="nav-link" href="#" (click)="logout()">
+            <mat-icon class="icon">input</mat-icon>
+          <span class="label"><strong>Déconnection</strong></span> 
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav> -->
+<!-- <ul class="nav nav-pills" style="  background-color: antiquewhite;     height: 63px;">
+  <li class="nav-item">
+    <a class="btn" style="float: left;" mat-icon-button (click)="opened = !opened"></a>
+  </li>
+  <li class="nav-item">
+    <a class="btn" href="#">Link</a>
+  </li>
+ 
+  <li class="nav-item">
+    <a class="btn" href="#">Disabled</a>
+  </li>
+</ul> -->
+ 
+<mat-sidenav-container style="top: 70px;     background: none;"  >
+  <mat-sidenav-container class="main-sidenav-container"id="sidebar" class="sidebar" style="top: 100px;" [ngClass]="{'sidebar-bg' : hasBackgroundImage()}"(backdropClick)="opened = !opened" *ngIf="this.authService.isAdmin()" >
+    <mat-sidenav style="top: 40px" class="ee" [mode]="mode"
+             [opened]="opened"
+             [fixedInViewport]="true"
+             [fixedTopGap]="layoutGap">
+            
+   
+     <div class="sidebar-content" >
+       <perfect-scrollbar>
+       
+   
+       
+         <div class="sidebar-menu">
+           <ul>
+             <li *ngFor="let menu of menus" [ngClass]="{'active': menu.active , 'sidebar-dropdown':menu.type === 'dropdown' , 'header-menu':menu.type === 'header'}">
+               <span *ngIf="menu.type === 'header'">{{menu.title}}</span>
+               <a (click)='toggle(menu)' routerLink="{{menu.link}}">
+                
+                  <mat-icon class="icon">{{menu.icon}}</mat-icon>
+               
+                 <span >{{menu.title}}</span>
+               
+                 
+               </a>
+               <div  *ngIf="menu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getState(menu)"> 
+                 <ul>
+                   <li *ngFor="let submenu of menu.submenus">
+                       
+  
+                     <a routerLink="{{submenu.linkk}}" (click)='getFiliere(submenu.id,submenu.title)'> 
+                       <mat-icon class="icon">{{submenu.icon}}</mat-icon>
+                       <span>
+                          {{submenu.title}}
+                       </span>
+                     </a>
+                     <!-- <div style="background-color:red;" *ngIf="submenu.type === 'dropdown'" class="sidebar-submenu" [@slide]="getState(submenu)"> 
+                      <ul>
+                        <li *ngFor="let submen of submenu.submenuss">
+                            
+       
+                          <a routerLink="{{submen.linkkk}}" > 
+                            <mat-icon class="icon">{{submen.icon}}</mat-icon>
+                            <span>
+                               {{submen.title}}
+                            </span>
+                          </a>
+                        </li>
+                      </ul>
+                    </div> -->
+                   </li>
+                 </ul>
+               </div>
+
+             </li>
+           </ul>
+         </div>
+     
+      </perfect-scrollbar>
+      </div>
+   </mat-sidenav>
+   </mat-sidenav-container> 
+
+  <!-- <div>
+    <mat-toolbar style="color: #CD5C5C	;">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Gestion d'absence</span>
+
+    </mat-toolbar>
+  </div> -->
+
+
+  <router-outlet></router-outlet>

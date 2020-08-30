@@ -1,0 +1,197 @@
+
+<br>
+<br>
+
+<div mat-dialog-content style="  margin-left: 220px; width: 95%;">
+  <p style="margin-top: -3px;     margin-left: 643px; margin-bottom: 1rem;">  <strong>Selectionnez la filière</strong></p>
+  <form class="example-form" (ngSubmit)="onSubmit()"  [formGroup]="data" style="height: 314px;" >
+    <mat-form-field  style= "margin-left: 629px;">
+      <mat-select matInput placeholder="filiere" required  formControlName="filiere" name="filiere">
+          <mat-option *ngFor="let filiere of filieres" [value]="filiere" (click)="selectFiliere(filiere)">
+            {{ filiere }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+<p><strong>Lundi</strong></p>
+<a style="margin-left: 30px;"><strong>08:30:00 - 10:30:00	</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+  
+  <mat-select matInput placeholder="Module" required  formControlName="lundi1" name="ville" >
+      <mat-option *ngFor="let module of modules" [value]="module"    (click)="onselect(module,1,filiere,1)">
+        {{ module }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+        
+  <a style="margin-left: 30px;"><strong>10:45:00 - 12:30:00</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+ 
+  <mat-select matInput placeholder="Module" required  formControlName="lundi2" name="ville">
+      <mat-option *ngFor="let module of modules" [value]="module"  (click)="onselect(module,1,filiere,2)" >
+        {{ module }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <a style="margin-left: 30px;"><strong>14:00:00 - 16:00:00	</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+<mat-select matInput placeholder="Module" required  formControlName="lundi3" name="ville">
+    <mat-option *ngFor="let module of modules"[value]="module"(click)="onselect(module,1,filiere,3)">
+      {{ module }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<a style="margin-left: 30px;"><strong>16:15:00 - 18:00:00</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+  <mat-select matInput placeholder="Module" required  formControlName="lundi4" name="ville" >
+      <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,1,filiere,4)">
+        {{ module }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+<p><strong>Mardi</strong></p>
+<a style="margin-left: 30px;"><strong>08:30:00 - 10:30:00</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+  <mat-select matInput placeholder="Module" required  formControlName="mardi1" name="ville">
+      <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,2,filiere,1)">
+        {{ module }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <a style="margin-left: 30px;"><strong>10:45:00 - 12:30:00</strong></a> 
+  <mat-form-field  style="margin-left: 30px;">
+    <mat-select matInput placeholder="Module" required  formControlName="mardi2" name="ville"  >
+        <mat-option *ngFor="let module of modules" [value]="module"(click)="onselect(module,2,filiere,2)">
+          {{ module }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <a style="margin-left: 30px;"><strong>14:00:00 - 16:00:00</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+  <mat-select matInput placeholder="Module" required  formControlName="mardi3" name="ville" >
+      <mat-option *ngFor="let module of modules"[value]="module"(click)="onselect(module,2,filiere,3)">
+        {{ module }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <a style="margin-left: 30px;"><strong>16:15:00 - 18:00:00</strong></a> 
+<mat-form-field  style="margin-left: 30px;">
+  <mat-select matInput placeholder="Module" required  formControlName="mardi4" name="ville" >
+      <mat-option *ngFor="let module of modules"[value]="module"(click)="onselect(module,2,filiere,4)">
+        {{ module }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <p><strong>Mercredi</strong></p>
+  <a style="margin-left: 30px;"><strong>08:30:00 - 10:30:00</strong></a> 
+  <mat-form-field  style="margin-left: 30px;">
+    <mat-select matInput placeholder="Module" required  formControlName="mercredi1" name="ville">
+        <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,3,filiere,1)">
+          {{ module }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <a style="margin-left: 30px;"><strong>10:45:00 - 12:30:00</strong></a> 
+    <mat-form-field  style="margin-left: 30px;">
+      <mat-select matInput placeholder="Module" required  formControlName="mercredi2" name="ville">
+          <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,3,filiere,2)">
+            {{ module }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <a style="margin-left: 30px;"><strong>16:15:00 - 18:00:00</strong></a> 
+      <mat-form-field  style="margin-left: 30px;">
+        <mat-select matInput placeholder="Module" required  formControlName="mercredi3" name="ville">
+            <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,3,filiere,3)">
+              {{ module }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <a style="margin-left: 30px;"><strong>16:15:00 - 18:00:00</strong></a> 
+        <mat-form-field  style="margin-left: 30px;">
+          <mat-select matInput placeholder="Module" required  formControlName="mercredi4" name="ville">
+              <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,3,filiere,4)">
+                {{ module }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <p><strong>Jeudi</strong></p>
+          <a style="margin-left: 30px;"><strong>08:30:00 - 10:30:00</strong></a> 
+          <mat-form-field  style="margin-left: 30px;">
+            <mat-select matInput placeholder="Module" required  formControlName="jeudi1" name="ville">
+                <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,4,filiere,1)">
+                  {{ module }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <a style="margin-left: 30px;"><strong>10:45:00 - 12:30:00</strong></a> 
+            <mat-form-field  style="margin-left: 30px;">
+              <mat-select matInput placeholder="Module" required  formControlName="jeudi2" name="ville">
+                  <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,4,filiere,2)">
+                    {{ module }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <a style="margin-left: 30px;"><strong>14:00:00 - 16:00:00</strong></a> 
+              <mat-form-field  style="margin-left: 30px;">
+                <mat-select matInput placeholder="Module" required  formControlName="jeudi3" name="ville">
+                    <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,4,filiere,3)">
+                      {{ module }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <a style="margin-left: 30px;"><strong>16:15:00 - 18:00:00</strong></a> 
+                <mat-form-field  style="margin-left: 30px;">
+                  <mat-select matInput placeholder="Module" required  formControlName="jeudi4" name="ville">
+                      <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,4,filiere,4)">
+                        {{ module }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+   
+                  <p><strong>Vendredi</strong></p>
+                  <a style="margin-left: 30px;"><strong>08:30:00 - 10:30:00</strong></a> 
+                  <mat-form-field  style="margin-left: 30px;">
+                    <mat-select matInput placeholder="Module" required  formControlName="vendredi1" name="ville">
+                        <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,5,filiere,1)">
+                          {{ module }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <a style="margin-left: 30px;"><strong>10:45:00 - 12:30:00</strong></a> 
+                    <mat-form-field  style="margin-left: 30px;">
+                      <mat-select matInput placeholder="Module" required  formControlName="vendredi2" name="ville">
+                          <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,5,filiere,2)">
+                            {{ module }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>   
+                      <a style="margin-left: 30px;"><strong>14:00:00 - 16:00:00</strong></a> 
+                      <mat-form-field  style="margin-left: 30px;">  
+                      <mat-select matInput placeholder="Module" required  formControlName="vendredi3" name="ville">
+                        <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,5,filiere,3)">
+                          {{ module }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>   
+                    <a style="margin-left: 30px;"><strong>16:15:00 - 18:00:00</strong></a> 
+                    <mat-form-field  style="margin-left: 30px;">  
+                      <mat-select matInput placeholder="Module" required  formControlName="vendredi4" name="ville">
+                        <mat-option *ngFor="let module of modules" [value]="module" (click)="onselect(module,5,filiere,4)">
+                          {{ module }}
+                        </mat-option>
+                      </mat-select>
+                    </mat-form-field>   
+                    
+      
+ 
+    <div mat-dialog-actions style="padding-left: 26px; margin-left: 8px;width: 209px;  margin-top: 33px;"    >
+      <button mat-raised-button type="submit"   color="primary"  style="    width: 83px;">Save</button>
+      <button mat-raised-button class="close" (click)="onNoClick()" color="warn" style="    width: 83px;">Cancel</button>
+    </div> 
+  </form>
+
+</div>
+
+

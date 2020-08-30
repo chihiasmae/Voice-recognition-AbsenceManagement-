@@ -1,0 +1,102 @@
+<br>
+<br>
+
+
+ 
+<div style="width: 1100px; margin: auto;background: lightgray;height: 46px;"*ngIf="this.authService.isAuthenticated()" >
+
+  <th *ngFor="let filiere of filieres"> 
+
+  <button mat-button (click)="getAbsenceByFiliere(filiere)" style="color: white; top: -8px;" >    {{filiere}}</button>
+
+</th>
+
+
+ </div>
+ 
+ <div style="width: 800px; margin: auto;"  >
+   <mat-form-field  > 
+  <div class="ss">
+   <input matInput   placeholder="Chercher par nom"  [(ngModel)]="name" (input)="searchByName()" >
+   </div>
+</mat-form-field>
+
+<mat-form-field style="margin-left: 350px;" > 
+ <input   matInput    placeholder="Chercher par module" [(ngModel)]="module" (input)="searchByModule()" >
+</mat-form-field>
+
+<form class="example-form" [formGroup]="dat">
+
+<mat-form-field>
+<label> <strong>Date Début</strong> </label>
+<div class="input-group">
+  <input matInput  style="width: 200px; margin: auto;" type="date"   formControlName="dateDebut" >
+</div>
+</mat-form-field>
+
+<mat-form-field>
+<label> <strong>Date Fin</strong> </label>
+<div class="input-group">
+  <input matInput  style="width: 200px; margin: auto; margin-left: 18px;" type="date"  formControlName="dateFin">
+</div>
+</mat-form-field>
+
+
+
+
+
+
+
+
+
+
+<button mat-raised-button (click)="searsh()"  style="top: 33px;
+margin-left: 80px; width: 150px ; background-color: bisque;
+    color:#DE3559;">Chercher</button>
+<button mat-raised-button (click)="Annuler()" color="primary" style="top: 33px;
+margin-left: 45px; width: 150px;background-color: bisque;
+    color: #DE3559;">Annuler la recherche</button>
+
+
+</form>
+
+</div>
+
+<table  style="width: 1200px; margin: auto;"  class="table"  >
+  <tr>
+    <th style="color: #03224C;">Nom</th>
+    <th style="color: #03224C;">Prénom</th>
+ 
+     <th style="color: #03224C;"> Date d'absence</th>
+    <th style="color: #03224C;">Jour</th>
+    <th style="color: #03224C;">Module</th>
+    <th style="color: #03224C;">Durée</th>
+    <th style="color: #03224C;">Etat</th>
+    <th style="color: #03224C;">Supprimer</th>
+    <th style="color: #03224C;">Editer Etat</th>
+  </tr>
+
+  <tr *ngFor='let o of dataa'>
+    <td>{{o.student.nom}} </td>
+    <td> {{o.student.prenom}}</td>
+    <td>{{o.date  | date: 'd/M/y'}}</td>
+    <td>{{o.cours.jour.nomJour}}</td>
+    <td>{{o.cours.module.libelle}}</td>
+    <td> {{o.cours.duree.dateDebut}} - {{o.cours.duree.dateFin}}</td>
+    <td>{{o.etat}}</td>
+    <td> <a (click)="supprimer(o.idAbsence)" type="button">
+      <span class="material-icons" style="color:darksalmon;">
+        delete_outline
+        </span>
+    </a></td>
+    <td> 
+      <a (click)="withJusti(o.idAbsence)" type="button">
+          <mat-icon class="icon" style="color: darksalmon;">done</mat-icon>
+       </a>
+        <a (click)="sansJusii(o.idAbsence)" type="button">
+       <mat-icon class="icon" style="color:darksalmon;">highlight_off</mat-icon>
+      </a>
+    </td>
+            
+  </tr>
+</table>

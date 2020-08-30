@@ -1,0 +1,48 @@
+
+  
+  <mat-card>
+    <a class="navbar-brand">
+      <img id="aeva" style="float: left; margin-left: -268px; width: 132px;" src="assets/images/enset.jpg">
+    </a>  
+      <mat-card-content>
+    
+        <form [formGroup]="form"  (ngSubmit)="onLogin()">
+    
+          <h2 style="color: #CC4E5C;">Log In</h2>
+    
+          <mat-error *ngIf="loginInvalid">
+    
+          The username and password were not recognised
+    
+          </mat-error> 
+          <mat-form-field class="full-width-input">
+    
+          <input matInput   placeholder="username" formControlName="username" required>
+  
+            <mat-error *ngIf="loginInvalid">
+  
+              Please provide a valid email address
+    
+            </mat-error>
+    
+          </mat-form-field>
+    
+          <mat-form-field class="full-width-input">
+    
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+    
+            <mat-error>
+  
+              Please provide a valid password
+    
+            </mat-error>
+    
+          </mat-form-field>
+    
+          <button mat-raised-button style="color: #CC4E5C;"> <strong>Login</strong> </button>
+    
+        </form>
+    
+      </mat-card-content>
+    
+    </mat-card>

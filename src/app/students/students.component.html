@@ -1,0 +1,51 @@
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="blocks">
+<button button="submit" mat-raised-button style="margin-left: 700px; top: -35px; background-color: darkblue;    color: white;" (click)="openDialog()">
+<mat-icon>add</mat-icon> Ajouter un étudiant </button>
+</div>
+
+<div style="width: 800px; margin: auto; background: antiquewhite;"*ngIf="this.authService.isAuthenticated()" >
+<th *ngFor="let filiere of filieres"> 
+<button mat-button (click)="getStudent(filiere)" >{{filiere}}</button>
+
+</th>
+</div>
+  <br>
+  <br>
+  <br>
+<mat-table #table [dataSource]="dataSource"  matSort >
+  <ng-container matColumnDef="nom">
+    <mat-header-cell *matHeaderCellDef  mat-sort-header> Nom</mat-header-cell>
+    <mat-cell *matCellDef="let element let i"  [style.color]="c"> {{element.nom}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="prenom">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Prenom  </mat-header-cell>
+      <mat-cell *matCellDef="let element let i"> {{element.prenom}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="telephone">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Téléphone </mat-header-cell>
+      <mat-cell *matCellDef="let element let i"> {{element.tele}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="CNE">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> CNE </mat-header-cell>
+      <mat-cell *matCellDef="let element let i"> {{element.cne}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Actions</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <a (click)="editer(element.idStudent)" type="button">
+          <mat-icon class="icon" style="color :rgb(9, 9, 75);">update</mat-icon>
+        </a>
+        <a (click)="supprimer(element.idStudent)" type="button">
+          <mat-icon class="icon" style="color: rgb(9, 9, 75);">delete</mat-icon>
+        </a>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
