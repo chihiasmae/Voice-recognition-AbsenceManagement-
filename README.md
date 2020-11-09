@@ -1,4 +1,4 @@
-absence-management-using-voice-recognition (Front-End).
+absence-management-using-voice-recognition (Front-End) .
 Vous trouvez la partie Back-End ici: https://github.com/chihiasmae/Voice-recognition-AbsenceManagement-Backend .
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
